@@ -25,6 +25,18 @@ public class HomeFragment extends Fragment {
         return ((HomeMvcImpl) mViewMvc).getRootView();
     }
 
+    @Override
+    public void setUserVisibleHint(boolean isVisibleToUser) {
+        super.setUserVisibleHint(isVisibleToUser);
+
+        // Make sure that we are currently visible
+        if (this.isVisible()) {
+            // If we are becoming invisible, then...
+            if (!isVisibleToUser) {
+                // TODO stop audio playback
+            }
+        }
+    }
 
 }
 
